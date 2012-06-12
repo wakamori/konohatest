@@ -46,7 +46,6 @@ void test_Kmap(CTX)
         assert(entry->hcode == i);
         entry->ukey = i*2;
         entry->uvalue = i;
-        _ctx->lib2->Kmap_add(map, entry);
     }
     for (i = 0; i < 10; ++i) {
         kmape_t *entry = _ctx->lib2->Kmap_get(map, i);
