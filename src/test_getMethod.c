@@ -88,9 +88,9 @@ void test_getMethod(CTX)
 {
     kMethod *mtd;
     kmethodn_t mn_f, mn_g, mn_h;
-    mn_f = ksymbol("f", 127, FN_NEWID, SYMPOL_METHOD);
-    mn_g = ksymbol("g", 127, FN_NEWID, SYMPOL_METHOD);
-    mn_h = ksymbol("h", 127, FN_NEWID, SYMPOL_METHOD);
+    mn_f = ksymbol("f", 127, SYM_NEWID, SYMPOL_METHOD);
+    mn_g = ksymbol("g", 127, SYM_NEWID, SYMPOL_METHOD);
+    mn_h = ksymbol("h", 127, SYM_NEWID, SYMPOL_METHOD);
 
     mtd = NameSpace_getMethodNULL(_ctx, kmodsugar->rootns,
             ct_dummy->cid, mn_f);
