@@ -19,9 +19,9 @@ class Vec {
 	float y;
 	float z;
 	Vec (float x0, float y0, float z0) {
-		x = x0;
-		y = y0;
-		z = z0;
+		this.x = x0;
+		this.y = y0;
+		this.z = z0;
 	}
 }
 
@@ -60,8 +60,8 @@ class Sphere {
 	double radius;
 
 	Sphere(double x0, double y0, double z0, double r0) {
-		_center = new Vec(x0, y0, z0);
-		_radius = r0;
+		this.center = new Vec(x0, y0, z0);
+		this.radius = r0;
 	}
 
 	Array[Sphere] newArray(int size) {
