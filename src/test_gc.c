@@ -96,7 +96,10 @@ void test_gc(CTX)
 int main(int argc, const char *argv[])
 {
     int ret = 0;
-    konoha_t konoha = konoha_open();
+    static kplatform_t plat = {
+    	"test", 4096,
+    };
+    konoha_t konoha = konoha_open((const kplatform_t*)&plat);
     test_gc(konoha);
     konoha_close(konoha);
     assert(__free__ == __init__);

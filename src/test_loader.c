@@ -83,7 +83,10 @@ void test_mtd_load(CTX)
 
 int main(int argc, const char *argv[])
 {
-    konoha_t konoha = konoha_open();
+    static kplatform_t plat = {
+    	"test", 4096,
+    };
+    konoha_t konoha = konoha_open((const kplatform_t*)&plat);
     test_module_load(konoha);
     test_classdef_load(konoha);
     test_mtd_load(konoha);

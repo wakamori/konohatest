@@ -112,7 +112,10 @@ void test_getMethod(CTX)
 
 int main(int argc, const char *argv[])
 {
-    konoha_t konoha = konoha_open();
+	static kplatform_t plat = {
+    	"test", 4096,
+    };
+    konoha_t konoha = konoha_open((const kplatform_t*)&plat);
     init_test(konoha);
     test_getMethod(konoha);
     konoha_close(konoha);
