@@ -39,8 +39,8 @@ extern kMethod* NameSpace_getMethodNULL(CTX, kNameSpace *ns, kcid_t cid, kmethod
 #define DF_(X)   ((const char*)(X))
 #define FF_(X)   (kMethod_##X)
 #endif
-static const char *KW_t_(CTX, keyword_t kw) { return NULL; }
-static kString *Skw_(CTX, keyword_t kw) { return NULL; }
+static const char *KW_t_(CTX, synid_t kw) { return NULL; }
+static kString *Skw_(CTX, synid_t kw) { return NULL; }
 
 static KMETHOD DummyBase_f(CTX, ksfp_t *sfp _RIX) {}
 static KMETHOD DummyBase_g(CTX, ksfp_t *sfp _RIX) {}

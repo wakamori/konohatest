@@ -42,8 +42,8 @@
 #define FF_(X)   (kMethod_##X)
 #endif
 
-static const char *KW_t_(CTX, keyword_t kw) { return NULL; }
-static kString *Skw_(CTX, keyword_t kw) { return NULL; }
+static const char *KW_t_(CTX, synid_t kw) { return NULL; }
+static kString *Skw_(CTX, synid_t kw) { return NULL; }
 
 static const char *MethodData[] = {
 	DF_(FF_(Static)), DF_(Int_opADD), DT_(Int), DC_(Int), "opAdd", DF_(2), "Int", "a", "Int", "b",
