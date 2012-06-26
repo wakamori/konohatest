@@ -22,7 +22,7 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  ***************************************************************************/
 
-
+#include <stdio.h>
 #include "konoha2/konoha2.h"
 
 int main(int argc, const char *argv[])
