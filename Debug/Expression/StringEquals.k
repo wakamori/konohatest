@@ -1,6 +1,6 @@
 //written by takeo onoda
 
-K.importPackage("konoha.string");
+K.import("konoha.string");
 
 void test() {
 	System.p("hoge" == "h");
