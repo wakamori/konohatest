@@ -25,6 +25,7 @@
 #include <stdio.h>
 #include "konoha2/konoha2.h"
 #include "konoha2/gc.h"
+#include "test_konoha.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -97,9 +98,6 @@ void test_gc(CTX)
 int main(int argc, const char *argv[])
 {
     int ret = 0;
-    static kplatform_t plat = {
-    	"test", 4096,
-    };
     konoha_t konoha = konoha_open((const kplatform_t*)&plat);
     test_gc(konoha);
     konoha_close(konoha);

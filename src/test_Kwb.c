@@ -25,6 +25,7 @@
 #include <stdio.h>
 #include "konoha2/konoha2.h"
 #include "konoha2/gc.h"
+#include "test_konoha.h"
 
 void test_Kwb(CTX)
 {
@@ -43,9 +44,6 @@ void test_Kwb(CTX)
 
 int main(int argc, const char *argv[])
 {
-    static kplatform_t plat = {
-    	"test", 4096,
-    };
     konoha_t konoha = konoha_open((const kplatform_t*)&plat);
     int i;
     for (i = 0; i < 100; ++i) {
