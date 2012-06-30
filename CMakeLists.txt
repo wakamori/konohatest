@@ -1,0 +1,35 @@
+cmake_minimum_required(VERSION 2.6)
+
+project(konohatest)
+enable_testing()
+
+macro(add_konoha_test test_name)
+	add_test(${test_name} ${TEST_BIN} ${ARGN})
+	set_tests_properties(${test_name} PROPERTIES TIMEOUT 10)
+endmacro(add_konoha_test test_name)
+
+if(NOT TARGET)
+	message(FATAL_ERROR "please set TARGET")
+endif(NOT TARGET)
+
+if(NOT TEST_BIN)
+	message(FATAL_ERROR "please set TEST_BIN")
+endif(NOT TEST_BIN)
+
+if(${TARGET} STREQUAL "IronKonoha")
+	message(STATUS "setting for IronKonoha")
+elseif(${TARGET} STREQUAL "JKonoha")
+	message(STATUS "setting for JKonoha")
+	set(TEST_BIN java -jar ${TEST_BIN})
+elseif(${TARGET} STREQUAL "JSKonoha")
+	message(STATUS "setting for JSKonoha")
+else()
+	message(FATAL_ERROR "undefined TARGET")
+endif()
+
+file(GLOB_RECURSE test_files ${CMAKE_CURRENT_SOURCE_DIR}/Release/*.k)
+foreach(f ${test_files})
+	string(REPLACE // / f ${f})
+	string(REPLACE ${CMAKE_CURRENT_SOURCE_DIR}/Release/ "" test_name ${f})
+	add_konoha_test(${test_name} ${f})
+endforeach(f ${test_files})
