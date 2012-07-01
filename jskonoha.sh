@@ -51,7 +51,7 @@ else
 fi
 
 TMPFILE=`mktemp /tmp/${PROGRAM}.XXXXXX` || exit 1
-TESTNAME=`echo $1 | sed -e 's/.*[^\/]*[\/]\([^\/]*\)$/\1/g' | sed -e 's/\./_/g'`
+TESTNAME=`echo $SCRIPT | sed -e 's/.*[^\/]*[\/]\([^\/]*\)$/\1/g' | sed -e 's/\./_/g'`
 
 cat << _EOT_ > $TMPFILE
 function ${TESTNAME}_test() {}
@@ -61,7 +61,7 @@ ${TESTNAME}_test.prototype.RunKonohaTest = function() {
 _EOT_
 
 while read line; do
-	echo -n "${line} " | sed -e 's/"/\\"/g' >> $TMPFILE
+	echo "${line} " | sed -e 's/"/\\"/g' | tr -d '\n' >> $TMPFILE
 done <${SCRIPT}
 
 cat << _EOT_ >> $TMPFILE
