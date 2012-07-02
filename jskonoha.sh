@@ -61,7 +61,7 @@ ${TESTNAME}_test.prototype.RunKonohaTest = function() {
 _EOT_
 
 while read line; do
-	echo ${line} '\\n \\' | sed -e 's/"/\\"/g' >> $TMPFILE
+	echo "${line}" ' \\n \\' | sed -e 's/"/\\"/g' >> $TMPFILE
 done <${SCRIPT}
 
 cat << _EOT_ >> $TMPFILE
